@@ -1,34 +1,34 @@
-import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib.pyplot as plt
 
-# Создаём массив значений X от 0 до 10 (50 точек для плавности кривой)
-X = np.linspace(0, 10, 50)
+x = np.linspace(-3, 3, 60)
 
-# Вычисляем соответствующие значения Y = X²
-Y = X ** 2
+y1 =  x**2
+y2 = x**3
 
-# Создаём фигуру и оси
 plt.figure(figsize=(10, 6))
 
-# Строим линейный график (точки соединяются линиями)
-plt.plot(X, Y, label='$Y = X^2$', color='blue', linewidth=2)
+plt.plot(x, y1, label='$y = x^{2}$', color='blue', linewidth=2)
+plt.plot(x, y2, label='$y = x^{3}$', color='red', linewidth=2)
 
-# Добавляем подписи осей
-plt.xlabel('X', fontsize=12)
-plt.ylabel('Y', fontsize=12)
+plt.title('Графики функций $y = x^{2}$ и $y = x^{3}$', fontsize=14)
 
-# Добавляем заголовок
-plt.title('График функции $Y = X^2$ (X от 0 до 10)', fontsize=14)
 
-# Включаем сетку для удобства чтения графика
+plt.xlabel('x', fontsize=12)
+
+plt.ylabel('y', fontsize=12)
+
 plt.grid(True, alpha=0.3)
+plt.axhline(y=0, color='k', linewidth=0.8)
+plt.axvline(x=0, color='k', linewidth=0.8)
 
-# Добавляем легенду
-plt.legend()
+plt.legend(fontsize=12)
+plt.axis('equal')
 
-# Устанавливаем ограничения по осям (чтобы график не прилипал к краям)
-plt.xlim(0, 10)
-plt.ylim(0, max(Y) + 10)
 
-# Отображаем график
+
+plt.tight_layout()
 plt.show()
+
+
+
